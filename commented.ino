@@ -1,7 +1,7 @@
 /* Fill-in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "TMPLi2ZCp4JV"
-#define BLYNK_TEMPLATE_NAME "Quickstart Device"
-#define BLYNK_AUTH_TOKEN "Ws9HJ2uqnVAvPRPnxu9W64o1qHoApLv4"
+#define BLYNK_TEMPLATE_ID "xxxxxxxx"
+#define BLYNK_TEMPLATE_NAME "xxxxxxxx"
+#define BLYNK_AUTH_TOKEN "xxxxxxxx"
 #define BLYNK_PRINT Serial
 
 // Include required libraries
@@ -15,8 +15,8 @@ EnergyMonitor emon;
 
 // Define variables for WiFi credentials
 // Set password to "" for open networks.
-char ssid[] = "NTIG Guest";
-char pass[] = "TeknikPassion";
+char ssid[] = "xxxxxxxx";
+char pass[] = "xxxxxxxx";
 
 // Create a SoftwareSerial object to communicate with the ESP8266 module, digital pin 6 = RX, digital pin 7 = TX
 SoftwareSerial Serial1(6, 7);
