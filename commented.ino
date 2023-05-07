@@ -1,7 +1,7 @@
 /* Fill-in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "xxxxxxxx"
-#define BLYNK_TEMPLATE_NAME "xxxxxxxx"
-#define BLYNK_AUTH_TOKEN "xxxxxxxx"
+#define BLYNK_TEMPLATE_ID "xxxxxxx"
+#define BLYNK_TEMPLATE_NAME "xxxxxxxxxx"
+#define BLYNK_AUTH_TOKEN "xxxxxxxxxxxxxx"
 #define BLYNK_PRINT Serial
 
 // Include required libraries
@@ -15,8 +15,8 @@ EnergyMonitor emon;
 
 // Define variables for WiFi credentials
 // Set password to "" for open networks.
-char ssid[] = "xxxxxxxx";
-char pass[] = "xxxxxxxx";
+char ssid[] = "xxxxxxxxxxx";
+char pass[] = "xxxxxxxxxxx";
 
 // Create a SoftwareSerial object to communicate with the ESP8266 module, digital pin 6 = RX, digital pin 7 = TX
 SoftwareSerial Serial1(6, 7);
@@ -29,7 +29,7 @@ double irms;
 double power;
 // Define variables for time-based notification
 unsigned long previousMillis = 0;
-const long interval = 10000; // interval (milliseconds)
+const long interval = 10000; // interval (milliseconds) for notification
 
 // This function is called every time the device is connected to the Blynk.Cloud
 BLYNK_CONNECTED()
@@ -94,12 +94,6 @@ void measure()
 
 void myNotification()
 { // Timer function without delay to send Notifications to a mobilephone
-    // static int i = 0;
-    // if (i = 10) {
-    //   Serial.println(F("Notification"));		   // Irms
-    //   Blynk.logEvent(F("lampa_pa"), F("Stäng av lampan!"));
-    // }
-    // i++;
 
     // Get current time in milliseconds
     unsigned long currentMillis = millis();
@@ -111,7 +105,7 @@ void myNotification()
         // Check if the power is greater than 1
         if (power < 1)
         {
-            // Store the current time as previous time
+            // Store the current time as previous time to reset the timer
             previousMillis = currentMillis;
             // Print "Notification" to the Serial monitor
             Serial.println(F("Notification"));
@@ -125,7 +119,4 @@ void loop()
 {
     Blynk.run(); // Run the Blynk application
     timer.run(); // Run the timer
-    // You can inject your own code or combine it with other sketches.
-    // Check other examples on how to communicate with Blynk. Remember
-    // to avoid delay() function!
 }
